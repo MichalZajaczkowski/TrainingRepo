@@ -6,10 +6,8 @@ public class App {
 
         Car myCar = new Car("name");
         myCar.printName();
-
         Car myCr2 = new Car();
         myCr2.name = "myCar2";
         myCr2.printName();
-
     }
 }
