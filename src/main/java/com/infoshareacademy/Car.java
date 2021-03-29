@@ -8,7 +8,8 @@ public class Car {
 
     }
     public Car(String name){
-        this.name = "default";
+        this.name = name;
+        maxSpeed = 150;
     }
     public void printName() {
         System.out.println(name);
