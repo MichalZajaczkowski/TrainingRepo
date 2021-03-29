@@ -4,10 +4,34 @@ public class App {
 
     public static void main(String[] args) {
 
-        Car myCar = new Car("name");
-        myCar.printName();
-        Car myCr2 = new Car();
-        myCr2.name = "myCar2";
-        myCr2.printName();
+// ex1a
+        Engine engine1 = new Engine();
+        Engine engine2 = new Engine();
+
+        engine1.power = 150;
+        engine1.capacity = 2500;
+
+        engine2.power = 250;
+        engine2.capacity = 3500;
+
+        System.out.println(engine1.power);
+        System.out.println(engine1.capacity);
+        System.out.println(engine2.power);
+        System.out.println(engine2.capacity);
+        System.out.println("+++++++++++++++++++");
+// ex1b
+        Car car1 = new Car("name");
+        Car car2 = new Car();
+
+        car1.engine = engine1;
+        car2.name = "myCar2";
+        car2.engine = engine2;
+
+        System.out.println(car1.name);
+        System.out.println(car1.engine.power);
+        System.out.println(car1.engine.capacity);
+        System.out.println(car2.name);
+        System.out.println(car2.engine.power);
+        System.out.println(car2.engine.capacity);
     }
 }
