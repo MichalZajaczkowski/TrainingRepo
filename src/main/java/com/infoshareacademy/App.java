@@ -8,29 +8,19 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
-
-        Car car = biuldCarFromUserInput();
-        printCar(car);
+        int[] tab = number(4);
+        printTable(tab);
     }
-
-    private static void printCar(Car car) {
-        car.printName();
-        car.getEngine().printPower();
+    private static void printTable(int[] tab) {
+        for (int i = 0; i < tab.length; i++) {
+            System.out.println(tab[i]);
+        }
     }
-
-    private static Car biuldCarFromUserInput() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("nazwa samochodu");
-        String name = scanner.nextLine();
-        System.out.println("moc silnika");
-        Integer enginePower = scanner.nextInt();
-
-        Engine engine = new Engine();
-        engine.setPower(enginePower);
-        Car car = new Car();
-        car.setName(name);
-        car.setEngine(new Engine());
-        car.setEngine(engine);
-        return car;
+    public static int[] number(int a) {
+        int[] tab = new int[10];
+        for (int i = 0; i < tab.length; i++) {
+            tab[i] = a++;
+        }
+        return tab;
     }
 }

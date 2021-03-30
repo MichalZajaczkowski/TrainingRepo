@@ -1,5 +1,7 @@
 package com.infoshareacademy.vehicle;
 
+import java.util.Objects;
+
 public class Engine {
     private Integer power;
     private Integer capacity;
@@ -25,5 +27,18 @@ public class Engine {
 
     public void setCapacity(Integer capacity) {
         this.capacity = capacity;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Engine engine = (Engine) o;
+        return Objects.equals(power, engine.power) && Objects.equals(capacity, engine.capacity);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(power, capacity);
     }
 }
