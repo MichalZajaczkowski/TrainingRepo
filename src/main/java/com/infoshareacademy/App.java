@@ -6,26 +6,38 @@ import com.infoshareacademy.vehicle.Engine;
 public class App {
 
     public static void main(String[] args) {
-// ex8
-        Car car1 = new Car("car1");
-        car1.setMaxSpeed(110);
-        Car car2 = new Car("car2");
-        car2.setMaxSpeed(110);
 
-        getNameOfFasterCar(car1, car2);
+        System.out.println("++++++++++while++++++++++"); // kiedy nie znamy ilości obiegów pętli
+        Integer i = 5;
+        while (i > 0) {
+            System.out.println(i);
+            i--;
+        }
+        System.out.println("++++++++++doWhile++++++++++");
+        Integer q = 5;
+        do {
+            q--;
+            System.out.println(q);
+        } while (q > 0);
+        System.out.println("++++++++++for++++++++++");// kiedy  znamy ilość obiegów pętli
+        Integer ln = 4;
+        for (int j = 0; j < ln; j++) {
+            System.out.println(j);
+        }
+
+        System.out.println("++++++++++continue / break++++++++++");// kiedy  znamy ilość obiegów pętli
+        number11(15);
     }
 
-    private static void getNameOfFasterCar(Car car1, Car car2) {
-        if (car1.getMaxSpeed() > car2.getMaxSpeed()) {
-            car1.printName();
-            car1.setName("faster car");
-
-        } else if (car2.getMaxSpeed() > car1.getMaxSpeed()) {
-            car2.printName();
-            car2.setName("faster car ");
-        } else {
-            System.out.println("prędkości takie same");
+    public static void number11(int a) {
+        for (int j = 0; j < a; j++) {
+            if (j % 2 == 0) {
+                continue;
+            }
+            if (j % 11 == 0) {
+                break;
+            }
+            System.out.println(j);
         }
-        System.out.println("car1: " + car1.getName() + ", car2: " + car2.getName());
     }
 }
