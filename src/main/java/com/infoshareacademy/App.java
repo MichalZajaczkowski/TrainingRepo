@@ -1,26 +1,24 @@
 package com.infoshareacademy;
 
-import com.infoshareacademy.vehicle.Car;
-import com.infoshareacademy.vehicle.Engine;
-
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
-        int[] tab = number(4);
-        printTable(tab);
+        Scanner scanner = new Scanner(System.in);
+        String nextLine = scanner.nextLine();
+
+        System.out.println(countDots(nextLine));
     }
-    private static void printTable(int[] tab) {
-        for (int i = 0; i < tab.length; i++) {
-            System.out.println(tab[i]);
+
+    private static int countDots(String nextLine) {
+        char[] chars = nextLine.toCharArray();
+        int counter = 0;
+        for (int i =0; i < chars.length; i++) {
+            if (chars[i] == '.') {
+                counter++;
+            }
         }
-    }
-    public static int[] number(int a) {
-        int[] tab = new int[10];
-        for (int i = 0; i < tab.length; i++) {
-            tab[i] = a++;
-        }
-        return tab;
+        return counter;
     }
 }
