@@ -8,10 +8,18 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         String nextLine = scanner.nextLine();
 
-        System.out.println(countDots(nextLine));
+        System.out.println("countDotsWithArray: " + countDotsWithArray(nextLine));
+        System.out.println("countDotsWithReplace: " + countDotsWithReplace(nextLine));
     }
 
-    private static int countDots(String nextLine) {
+    private static int countDotsWithReplace(String nextLine) {
+        int baseLength = nextLine.length();
+        String replace = nextLine.replace(".", "");
+        int replaceLength = replace.length();
+        return  baseLength - replaceLength;
+    }
+
+    private static int countDotsWithArray(String nextLine) {
         char[] chars = nextLine.toCharArray();
         int counter = 0;
         for (int i =0; i < chars.length; i++) {
