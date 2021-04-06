@@ -5,17 +5,20 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
-        MyEnum myEnum = MyEnum.B;
-        System.out.println(myEnum);
-        System.out.println(myEnum.ordinal());
+        Scanner scanner = new Scanner(System.in);
+        String nextLine = scanner.nextLine();
+        nextLine = nextLine.trim();
 
-        MyEnum[] values = MyEnum.values();
-        for (int i =0; i< values.length; i++) {
-            System.out.println(values[i]);
+        String[] split = nextLine.split(" ");
+
+        int counter = 0;
+        for (int i = 0; i < split.length; i++){
+            if (split[i].isEmpty()) {
+                continue;
+            }
+            counter++;
+            System.out.println(split[i]);
         }
-
-        MyEnum myEnum1 = MyEnum.valueOf("A");
-        System.out.println(myEnum1);
-        System.out.println(myEnum1.ordinal());
+        System.out.println(counter);
     }
 }
