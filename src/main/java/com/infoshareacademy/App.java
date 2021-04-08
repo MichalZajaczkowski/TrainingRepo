@@ -1,24 +1,19 @@
 package com.infoshareacademy;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String nextLine = scanner.nextLine();
-        nextLine = nextLine.trim();
 
-        String[] split = nextLine.split(" ");
-
-        int counter = 0;
-        for (int i = 0; i < split.length; i++){
-            if (split[i].isEmpty()) {
-                continue;
-            }
-            counter++;
-            System.out.println(split[i]);
+        try {
+            System.out.println("Podaj liczbę zmiennoprzecinkową");
+            double scannerDouble = scanner.nextDouble();
+            System.out.println(scannerDouble);
+        } catch (InputMismatchException e){
+            System.out.println("Podałeś błędna wartość ");
         }
-        System.out.println(counter);
     }
 }
