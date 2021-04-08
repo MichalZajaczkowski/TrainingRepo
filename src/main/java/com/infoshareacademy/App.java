@@ -6,19 +6,9 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
-        Scanner scanner;
-
-        boolean flag = true;
-        while (flag) {
-            try {
-                scanner = new Scanner(System.in);
-                int i = scanner.nextInt();
-                System.out.println("podano: " + i);
-                flag = false;
-                //break;
-            }catch (InputMismatchException e) {
-                System.out.println("podałeś błędne dane");
-            }
-        }
+        Scanner scanner = new Scanner(System.in);
+        String nextLine = scanner.nextLine();
+        Integer number = Integer.valueOf(nextLine);
+        System.out.println(number * 3);
     }
 }
