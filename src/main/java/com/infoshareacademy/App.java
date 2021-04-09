@@ -4,20 +4,27 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
+
+import java.util.Scanner;
 
 public class App {
 
-    public static void main(String[] args){
-        Path path = Paths.get("src", "main", "java", "com", "infoshareacademy", "file.txt");
+    public static final Path RESOURCES = Paths.get("src", "main", "resources");
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        String inputText = scanner.nextLine();
+
+        //String toFile = RESOURCES.toString().concat("\\input.txt");
+        Path pathToFile = Paths.get(RESOURCES.toString(), "input.txt");
+        //Path pathToFile = Paths.get(toFile);
 
         try {
-            //Files.createFile(path);
-            List<String> strings = Files.readAllLines(path);
-            for (String s :
-                    strings) {
-                System.out.println(s);
-            }
+            Files.writeString(pathToFile, inputText);
+            String readString = Files.readString(pathToFile);
+
+            System.out.println(readString);
         } catch (IOException e) {
             e.printStackTrace();
         }

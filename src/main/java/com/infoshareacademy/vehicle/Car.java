@@ -4,6 +4,7 @@ public class Car {
     private String name = "defoult";
     private Engine engine;
     private int maxSpeed;
+    private Color color;
 
 
     public Car() {
@@ -42,5 +43,9 @@ public class Car {
 
     public void setMaxSpeed(int maxSpeed) {
         this.maxSpeed = maxSpeed;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
     }
 }
