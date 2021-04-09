@@ -2,7 +2,7 @@ package com.infoshareacademy.vehicle;
 
 import java.util.Objects;
 
-public class Car {
+public class Car extends Vehicle{
     private String name = "defoult";
     private Engine engine;
     private int maxSpeed;
@@ -49,6 +49,11 @@ public class Car {
 
     public void setColor(Color color) {
         this.color = color;
+    }
+
+    @Override
+    public void printID() {
+        super.printID();
     }
 
     @Override
