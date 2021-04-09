@@ -1,5 +1,8 @@
 package com.infoshareacademy;
 
+import com.infoshareacademy.inheritance.A;
+import com.infoshareacademy.inheritance.B;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,22 +14,20 @@ public class App {
 
     public static final Path RESOURCES = Paths.get("src", "main", "resources");
 
+    public static void method(A a) {
+        System.out.println(a.getClass().getSimpleName());
+    }
+
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-        String inputText = scanner.nextLine();
+        B b = new B();
+        b.getA();
+        b.getB();
 
-        //String toFile = RESOURCES.toString().concat("\\input.txt");
-        Path pathToFile = Paths.get(RESOURCES.toString(), "input.txt");
-        //Path pathToFile = Paths.get(toFile);
+        A a = new A();
+        a.getA();
 
-        try {
-            Files.writeString(pathToFile, inputText);
-            String readString = Files.readString(pathToFile);
-
-            System.out.println(readString);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        method(a);
+        method(b);
     }
 }
