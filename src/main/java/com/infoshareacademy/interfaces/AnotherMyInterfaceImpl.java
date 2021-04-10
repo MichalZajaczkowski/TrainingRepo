@@ -10,4 +10,9 @@ public class AnotherMyInterfaceImpl implements MyInterface{
     public int generateNumber(int range) {
         return 4;
     }
+
+    @Override
+    public void printImpl() {
+        System.out.println("metoda nadpisana w klasie"  + " / " +  getClass().getSimpleName());
+    }
 }
