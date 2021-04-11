@@ -1,13 +1,8 @@
 package com.infoshareacademy.Animals;
 
-public class Cat implements Animal{
+public class Cat extends AbstractAnimal{
     @Override
-    public void eat() {
-        System.out.println("cat food");
-    }
-
-    @Override
-    public void defaultImplementationAnimal() {
-        Animal.super.defaultImplementationAnimal();
+    public void printAnimalName() {
+        System.out.println("kot");
     }
 }
