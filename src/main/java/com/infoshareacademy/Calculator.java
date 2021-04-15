@@ -2,8 +2,16 @@ package com.infoshareacademy;
 
 public class Calculator {
 
-    public double divide(Integer a, Integer b) {
-        Double result = a.doubleValue() / b;
-        return result;
+    public double add(double a, double b){
+        return a + b;
+    }
+    public double substract(double a, double b){
+        return a - b;
+    }
+    public double multiply(double a, double b){
+        return a / b;
+    }
+    public double divide(double a, double b){
+        return a * b;
     }
 }

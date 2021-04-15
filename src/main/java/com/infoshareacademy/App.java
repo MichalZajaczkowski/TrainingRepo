@@ -1,15 +1,14 @@
 package com.infoshareacademy;
 
 
-import com.infoshareacademy.ex353637.C;
-import com.infoshareacademy.vehicle.Car;
+import com.ScientifictCalculator;
+
 
 public class App {
 
     public static void main(String[] args) {
-        C c = new C();
-        c.setA(5);
-        
-        c.metodaD();
+
+        ScientifictCalculator scientifictCalculator = new ScientifictCalculator();
+        System.out.println(scientifictCalculator.power(2, 3));
     }
 }
